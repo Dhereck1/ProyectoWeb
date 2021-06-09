@@ -10,9 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { PacienteComponent } from './components/paciente/paciente.component';
 import { AdminComponent } from './components/admin/admin.component'
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -29,10 +28,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatFormFieldModule
-
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
