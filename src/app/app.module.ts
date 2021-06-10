@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PacienteComponent } from './components/paciente/paciente.component';
 import { AdminComponent } from './components/admin/admin.component'
 import { MaterialModule } from './material/material.module';
+import { CitasComponent } from './components/citas/citas.component';
 
 
 
@@ -21,7 +22,8 @@ import { MaterialModule } from './material/material.module';
     FooterComponent,
     HomeComponent,
     PacienteComponent,
-    AdminComponent
+    AdminComponent,
+    CitasComponent
   ],
   imports: [
     BrowserModule,
