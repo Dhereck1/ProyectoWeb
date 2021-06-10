@@ -4,12 +4,14 @@ import { AdminComponent } from './components/admin/admin.component';
 
 import { HomeComponent } from '../app/components/home/home.component';
 import { PacienteComponent } from './components/paciente/paciente.component';
+import { CitasComponent } from './components/citas/citas.component';
 
 const routes: Routes = [
   {path:'home',component: HomeComponent},
-  {path:'', redirectTo: '/home', pathMatch: 'full' },
   {path:'admin',component:AdminComponent},
   {path:'paciente/:id',component:PacienteComponent},
+  {path:'paciente/:id/citas',component:CitasComponent},
+  {path:'', redirectTo: '/home', pathMatch: 'full' }
 
 ];
 
