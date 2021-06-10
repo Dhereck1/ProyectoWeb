@@ -1,24 +1,24 @@
 export interface paciente{
-    idPaciente: number;
-    nombre: String;
-    apellido: String;
+    idUsuario: number;
     rut: String; 
-    region: String;
+    contrasena:String;
+    historiaClinica: String;
+    rol:number;
+    direccion: String;
     comuna: String;
     correo: String;
-    direccion: String;
-    historia: String;
-    contrasena:String;
+    nombre: String;
+    apellido: String;
 }
 
 export interface cita{
     idCita: number;
+    idUsuario: number;
     idMedico: number;
-    idPaciente: number;
-    descripcion: string;
-    estado:string;
     fecha:string;
     hora:string;
+    descripcion: string;
+    estado:string;
 }
 
 export interface medico{

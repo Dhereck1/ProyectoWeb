@@ -10,15 +10,18 @@ import { ConexionService } from 'src/app/servicios/conexion.service';
 })
 export class CitasComponent implements OnInit {
 
-  id=''
-  citas?:cita[];
+  id='';
+  listaCitas:Array<cita>=[];
 
   constructor(private router: Router , private route:ActivatedRoute , private servicio:ConexionService) { }
 
   ngOnInit(): void {
     this.id=this.route.snapshot.paramMap.get('id') as string;
     this.servicio.getCitaById(Number(this.id)).subscribe(
-      (Citas:cita[])=>this.citas=Citas, error=> console.error(error)
+      (Citas:Array<cita>=[])=>{
+        this.listaCitas=Citas;
+        console.log(this.listaCitas);
+      }
     )
   }
 }
