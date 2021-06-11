@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router,ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-paciente',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacienteComponent implements OnInit {
 
-  constructor() { }
+  id = ''
+
+  constructor(private router: Router , private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id=this.route.snapshot.paramMap.get('id') as string;
+  }
+
+  irCitas(){
+    this.router.navigate(['/paciente',this.id,'citas']);
   }
 
 }
