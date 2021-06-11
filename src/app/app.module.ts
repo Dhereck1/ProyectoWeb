@@ -23,7 +23,6 @@ import { CitasComponent } from './components/citas/citas.component';
     HomeComponent,
     PacienteComponent,
     AdminComponent,
-    formulario,
     RegistroComponent,
     CitasComponent
   ],
