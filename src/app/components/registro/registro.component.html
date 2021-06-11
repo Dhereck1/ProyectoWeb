@@ -1,0 +1,63 @@
+
+<div class="container">
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">  <!-- onSubmit crear funcion que valide campos-->
+    <label class="labelForm">Formulario registro</label>
+        <p>
+        <mat-form-field appearance="legacy">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Ingrese nombre" formControlName="nombre" type="text" class="input">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="standard">
+        <mat-label>Apellidos</mat-label>
+        <input matInput placeholder="Ingrese apellidos" formControlName="apellido" type="text"class="input">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="fill">
+        <mat-label>Rut</mat-label>
+        <input matInput placeholder="x.xxx.xxx-x" formControlName="rut" type="text"class="input">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+        <mat-label>Región</mat-label>
+        <mat-select required formControlName="region" (selectionChange)= "getComuna()">
+            <mat-option *ngFor="let item of listaRegiones" [value] = "item.codigo" >{{item.nombre}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+        <mat-label>Comuna</mat-label>
+        <mat-select required formControlName="comuna">
+            <mat-option *ngFor= "let item of listaComunas" [value] = "item.codigo">{{item.nombre}}</mat-option>
+        </mat-select>
+        <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="fill">
+        <mat-label>Correo Electronico</mat-label>
+        <input  matInput placeholder="pepito@mail.com" formControlName="correo" type="text"class="input">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="ingrese contraseña" formControlName="contrasena" type="text"class="input">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+    </p>
+    </form>
+</div>

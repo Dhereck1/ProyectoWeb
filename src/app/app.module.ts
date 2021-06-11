@@ -11,7 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PacienteComponent } from './components/paciente/paciente.component';
 import { AdminComponent } from './components/admin/admin.component'
 import { MaterialModule } from './material/material.module';
-
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { MaterialModule } from './material/material.module';
     FooterComponent,
     HomeComponent,
     PacienteComponent,
-    AdminComponent
+    AdminComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
