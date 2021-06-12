@@ -1,3 +1,15 @@
+$green: #7ed321;
 .example-spacer {
     flex: 1 1 auto;
+       
   }
+
+.title{
+  font-style: italic;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+mat-toolbar{
+  background-color: $green;
+  color: whitesmoke;
+}

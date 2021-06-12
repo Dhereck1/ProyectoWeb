@@ -6,28 +6,33 @@
         <mat-form-field appearance="legacy">
         <mat-label>Nombre</mat-label>
         <input matInput placeholder="Ingrese nombre" formControlName="nombre" type="text" class="input">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-icon matSuffix>perm_identity</mat-icon>
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="standard">
+        <mat-form-field appearance="legacy">
         <mat-label>Apellidos</mat-label>
         <input matInput placeholder="Ingrese apellidos" formControlName="apellido" type="text"class="input">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-icon matSuffix>perm_identity</mat-icon>
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="legacy">
         <mat-label>Rut</mat-label>
         <input matInput placeholder="x.xxx.xxx-x" formControlName="rut" type="text"class="input">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-icon matSuffix>recent_actors</mat-icon>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+        <mat-label>Dirección</mat-label>
+        <input matInput placeholder="calle y numero de domicilio" formControlName="direccion" type="text"class="input">
+        <mat-icon matSuffix>add_location</mat-icon>      
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="legacy">
         <mat-label>Región</mat-label>
         <mat-select required formControlName="region" (selectionChange)= "getComuna()">
             <mat-option *ngFor="let item of listaRegiones" [value] = "item.codigo" >{{item.nombre}}</mat-option>
@@ -35,29 +40,29 @@
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="legacy">
         <mat-label>Comuna</mat-label>
         <mat-select required formControlName="comuna">
             <mat-option *ngFor= "let item of listaComunas" [value] = "item.codigo">{{item.nombre}}</mat-option>
         </mat-select>
-        <mat-hint>Hint</mat-hint>
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="legacy">
         <mat-label>Correo Electronico</mat-label>
         <input  matInput placeholder="pepito@mail.com" formControlName="correo" type="text"class="input">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-icon matSuffix>mail_outline</mat-icon>
         </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="legacy">
         <mat-label>Contraseña</mat-label>
         <input matInput placeholder="ingrese contraseña" formControlName="contrasena" type="text"class="input">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-icon matSuffix>security</mat-icon>
         </mat-form-field>
     </p>
+
+    <p class="button-container field">
+        <button type="submit" mat-raised-button class="button" [disabled]="!form.valid">Confirmar</button>
     </form>
 </div>
