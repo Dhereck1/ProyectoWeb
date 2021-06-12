@@ -6,6 +6,7 @@ export interface paciente{
     rol:number;
     direccion: String;
     comuna: String;
+    region:String;
     correo: String;
     nombre: String;
     apellido: String;
