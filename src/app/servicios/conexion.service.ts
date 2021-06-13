@@ -23,6 +23,9 @@ export class ConexionService {
     return this.servicio.get(`${this.servidor}/api/cita/${id}`);
   }
 
+  getNombreMedById(id:number):Observable<any>{
+    return this.servicio.get(`${this.servidor}/api/cita/medico/${id}`);
+  }
 
   //borrarNota
   //editarNota
