@@ -1,0 +1,23 @@
+<div class="container">
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">  <!-- onSubmit crear funcion que valide campos-->
+    <label class="labelForm">Reserva de Hora</label>
+        <p>
+        <mat-form-field appearance="legacy">
+        <mat-label>Motivo de su hora</mat-label>
+        <textarea matInput placeholder="Describa aqui sus sintomas o derivaciones médicas" formControlName="descripcion" type="textarea" class="input"></textarea>
+        </mat-form-field>
+    </p>
+      
+    <p>
+        <mat-form-field appearance="legacy">
+        <mat-label>Especialidad</mat-label>
+        <!--<mat-select required formControlName="especialidad" (selectionChange)= "getComuna()">
+            <mat-option *ngFor="let item of listaRegiones" [value] = "item.codigo" >{{item.especialidad}}</mat-option>
+        </mat-select>--> 
+        </mat-form-field>
+    </p>
+    
+    <p class="button-container field">
+        <button type="submit" mat-raised-button class="button" [disabled]="!form.valid">Confirmar</button>
+    </form>
+</div>

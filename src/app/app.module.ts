@@ -13,6 +13,8 @@ import { AdminComponent } from './components/admin/admin.component'
 import { MaterialModule } from './material/material.module';
 import { RegistroComponent } from './components/registro/registro.component';
 import { CitasComponent } from './components/citas/citas.component';
+import { ListarCitasAdminComponent } from './components/listar-citas-admin/listar-citas-admin.component';
+import { PedirCitaComponent } from './components/pedir-cita/pedir-cita.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { CitasComponent } from './components/citas/citas.component';
     PacienteComponent,
     AdminComponent,
     RegistroComponent,
-    CitasComponent
+    CitasComponent,
+    ListarCitasAdminComponent,
+    PedirCitaComponent
   ],
   imports: [
     BrowserModule,
