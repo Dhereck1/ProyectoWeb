@@ -13,8 +13,12 @@ import { AdminComponent } from './components/admin/admin.component'
 import { MaterialModule } from './material/material.module';
 import { RegistroComponent } from './components/registro/registro.component';
 import { CitasComponent } from './components/citas/citas.component';
+
 import { ListarCitasAdminComponent } from './components/listar-citas-admin/listar-citas-admin.component';
 import { PedirCitaComponent } from './components/pedir-cita/pedir-cita.component';
+
+import { HistoriaClinicaComponent } from './components/paciente/historia-clinica/historia-clinica.component';
+
 
 
 @NgModule({
@@ -27,8 +31,12 @@ import { PedirCitaComponent } from './components/pedir-cita/pedir-cita.component
     AdminComponent,
     RegistroComponent,
     CitasComponent,
+
     ListarCitasAdminComponent,
     PedirCitaComponent
+
+    HistoriaClinicaComponent
+
   ],
   imports: [
     BrowserModule,

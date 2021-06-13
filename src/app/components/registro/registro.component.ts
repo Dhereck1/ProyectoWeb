@@ -68,9 +68,11 @@ export class RegistroComponent implements OnInit {
         idUsuario: 0, //Esto no se como definirlo porque se supone q va cambiando provisoriamente asi
       };
 
-      this.paciente_service.addPaciente(paciente);
+      this.paciente_service.addPaciente(paciente).subscribe(añadido=>{ //"Añadido" es el paciente que fue añadido a la BD
+        console.log(`${añadido} Fue añadadido`)
+      });
       // this.form.reset();
-      this.router.navigate(['']) //definir que se va a vista paciente
+      this.router.navigate([``]) //definir que se va a vista paciente
 
     }
   }

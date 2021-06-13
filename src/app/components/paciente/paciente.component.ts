@@ -19,5 +19,12 @@ export class PacienteComponent implements OnInit {
   irCitas(){
     this.router.navigate(['/paciente',this.id,'citas']);
   }
+  pedirCita(){
+    this.router.navigate(['/paciente',this.id,'pedir']);
+  }
+  irHistoria(){
+
+    this.router.navigate(['/paciente',this.id,'historia']);
+  }
 
 }
