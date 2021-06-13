@@ -6,6 +6,7 @@ import { HomeComponent } from '../app/components/home/home.component';
 import { PacienteComponent } from './components/paciente/paciente.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { CitasComponent } from './components/citas/citas.component';
+import { HistoriaClinicaComponent } from './components/paciente/historia-clinica/historia-clinica.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'paciente/:id',component:PacienteComponent},
   {path: 'registro', component: RegistroComponent}, //espeificar donde va despues
   {path:'paciente/:id/citas',component:CitasComponent},
+  {path:'paciente/:id/historia',component:HistoriaClinicaComponent},
   {path:'', redirectTo: '/home', pathMatch: 'full' }
 ];
 
