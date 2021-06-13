@@ -33,8 +33,7 @@ import { HistoriaClinicaComponent } from './components/paciente/historia-clinica
     CitasComponent,
 
     ListarCitasAdminComponent,
-    PedirCitaComponent
-
+    PedirCitaComponent,
     HistoriaClinicaComponent
 
   ],
