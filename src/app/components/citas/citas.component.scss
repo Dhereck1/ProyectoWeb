@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+$size-shadow: 5px 5px 0px 0px;
+$size-shadow-hover: 15px 15px 0px 0px;
+
+$green: #7ed321;
+$abierta: rgb(248, 234, 109);
+$asignada: rgb(160, 244, 250);
+$cerrada: rgb(154, 152, 247);
+
+$abierta-bg: #c1b1db;
+$abierta-bg-shadow: #ebdea6;
+$abierta-shadow: $size-shadow lighten($abierta-bg-shadow, 5%);
+$abierta-shadow-hover: $size-shadow-hover lighten($abierta-bg-shadow, 5%);
+
+$asignada-bg: #495aaa;
+$asignada-bg-shadow: #68b3e6;
+$asignada-shadow: $size-shadow lighten($asignada-bg-shadow, 5%);
+$asignada-shadow-hover: $size-shadow-hover lighten($asignada-bg-shadow, 5%);
+
+$cerrada-bg: #615fe1;
+$cerrada-bg-shadow: #6c74e4;
+$cerrada-shadow: $size-shadow lighten($cerrada-bg-shadow, 5%);
+$cerrada-shadow-hover:  lighten($cerrada-bg-shadow, 10%);
+
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+}
+.main-container {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 50%;
+}
+.grid-container {
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.column {
+  width: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  margin-bottom: 30px;
+  font-family: Fjalla One;
+}
+
+.closed {
+  box-shadow: $cerrada-shadow;
+  opacity: 1;
+  transition: .5s ease;
+  background: $cerrada !important;
+  color: #fff;
+
+}
+
+.asign {
+  background: $asignada !important;
+  color: #fff;
+  box-shadow: $asignada-shadow;
+  
+}
+
+
+.open {
+  background: $abierta !important;
+  color: #fff;
+  box-shadow: $abierta-shadow;
+  opacity: 1;
+  transition: .5s ease;
+}
+
+.title {
+  text-align: left;
+  font-family: Fjalla One;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.description {
+  text-align: left;
+}
+.del-icon {
+    cursor: pointer;
+  }
+
+.mat-chip{
+  margin-top: 20px;  
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-decoration:solid;
+}
+
+.chip1{
+  background: $abierta !important;
+
+}
+
+.chip2{
+  background: $asignada !important;
+  
+}
+
+.chip3{
+  background: $cerrada !important;
+
+}
