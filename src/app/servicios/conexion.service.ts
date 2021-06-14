@@ -14,7 +14,6 @@ export class ConexionService {
   constructor(private servicio:HttpClient) { }
 
   getAllCitas():Observable<any>{
-
     return this.servicio.get(`${this.servidor}/api/cita/all`);
   }
 
@@ -27,6 +26,12 @@ export class ConexionService {
     return this.servicio.get(`${this.servidor}/api/cita/medico/${id}`);
   }
 
+  actualizarCita(id:number):Observable<any>{
+    return this.servicio.put(`${this.servidor}/api/cita/editarCita`,id)
+  }
+  cancelarCita(Cita:cita):Observable<any>{
+    return this.servicio.put(`${this.servidor}/api/cita/cancelarCita`,Cita)
+  }
   //borrarNota
   //editarNota
   //postCita

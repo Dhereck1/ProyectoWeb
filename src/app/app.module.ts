@@ -18,6 +18,7 @@ import { ListarCitasAdminComponent } from './components/listar-citas-admin/lista
 import { PedirCitaComponent } from './components/pedir-cita/pedir-cita.component';
 
 import { HistoriaClinicaComponent } from './components/paciente/historia-clinica/historia-clinica.component';
+import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/reporte-usuarios.component';
 
 
 
@@ -34,7 +35,8 @@ import { HistoriaClinicaComponent } from './components/paciente/historia-clinica
 
     ListarCitasAdminComponent,
     PedirCitaComponent,
-    HistoriaClinicaComponent
+    HistoriaClinicaComponent,
+    ReporteUsuariosComponent
 
   ],
   imports: [

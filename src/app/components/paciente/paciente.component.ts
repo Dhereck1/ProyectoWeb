@@ -20,7 +20,7 @@ export class PacienteComponent implements OnInit {
     this.router.navigate(['/paciente',this.id,'citas']);
   }
   pedirCita(){
-    this.router.navigate(['/paciente',this.id,'pedir']);
+    this.router.navigate(['/paciente',this.id,'reserva']);
   }
   irHistoria(){
 

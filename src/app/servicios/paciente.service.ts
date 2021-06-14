@@ -26,6 +26,9 @@ export class PacienteService {
   getHistoria(id:number):Observable<any>{
     return this.servicio.get(`${this.servidor}/api/paciente/${id}/historia`);
   }
+  getAllPacientes():Observable<any>{
+    return this.servicio.get(`${this.servidor}/api/paciente/all`);
+  }
 
 
 }
