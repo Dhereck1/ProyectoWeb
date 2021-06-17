@@ -10,6 +10,7 @@ import { CitasComponent } from './components/citas/citas.component';
 import { ListarCitasAdminComponent } from './components/listar-citas-admin/listar-citas-admin.component';
 import { PedirCitaComponent } from './components/pedir-cita/pedir-cita.component';
 import { HistoriaClinicaComponent } from './components/paciente/historia-clinica/historia-clinica.component';
+import { FormCitaAdminComponent } from './components/form-cita-admin/form-cita-admin.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'listar-citas-admin', component: ListarCitasAdminComponent},
   {path: 'reserva', component:PedirCitaComponent},
   {path:'paciente/:id/historia',component:HistoriaClinicaComponent},
+  {path: 'formCitaAdmi', component: FormCitaAdminComponent},
   {path:'', redirectTo: '/home', pathMatch: 'full' }
 ];
 

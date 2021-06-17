@@ -1,0 +1,55 @@
+<div class="container">
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">  <!-- onSubmit crear funcion que valide campos-->
+    <label class="labelForm">Reserva de Hora cita N°: completar</label>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre Paciente: </mat-label>  
+            <input matInput   type="text"class="input"> <!--DEBERIA ESTAR EL NOMBRE DEL PACIENTE YA PUESTO SEGUN EL IDUSARIO DE LA CITA -->
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre Medico: </mat-label>
+            <mat-select required formControlName="medico">
+                <mat-option *ngFor="let item of listaMedicos" [value]="item.idMedico">{{item.nombre}} {{item.apellido}} | Especialidad: {{item.especialidadNombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input matInput placeholder="fecha" formControlName="fecha" type="date" class="input">      
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Hora</mat-label>
+            <!-- podriamos dejarlo como type= time o hacer que la cita tuviera el tipo hora estabkecidas por ejemplo 
+            a las 10am desp 10:30 y asi hacer un select de las q tenemos -->
+           <input matInput placeholder="hora" formControlName="hora" type="time" id="appt" name="appt"
+       min="09:00" max="17:00" minute-steps="30"class="input" required>
+        </mat-form-field>  
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+                <select matNativeControl required formControlName="estado">
+                    <option value="abierta">Abierta</option>
+                    <option value="asignada">Asignada</option>
+                    <option value="cerrada">Cerrada</option>                
+                </select>
+            </mat-form-field>  
+    </p>
+
+    <p>
+        <!--aqui deberia aparecer el moivo q escribio el paciente al reservar la hora y el admin deberia poder escribir si es que se cancela la hora-->
+        <mat-form-field appearance="outline">
+        <mat-label>Motivo de su hora</mat-label>
+        <textarea minlength="10" matInput placeholder="Describa aqui sus sintomas o derivaciones médicas (min 10 caracteres)" formControlName="descripcion" type="textarea" class="input"></textarea>
+        </mat-form-field>
+    </p>
+     
+        <p class="button-container field">
+        <button type="submit" mat-raised-button class="button" [disabled]="!form.valid">Actualizar</button>
+    </form>
+</div>

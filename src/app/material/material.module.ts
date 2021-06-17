@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 const MaterialComponents =[
   MatToolbarModule,
@@ -16,7 +17,8 @@ const MaterialComponents =[
   MatButtonModule,
   MatCardModule,
   MatSelectModule,
-  MatChipsModule
+  MatChipsModule,
+  MatDatepickerModule
 ]
 
 
