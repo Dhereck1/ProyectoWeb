@@ -14,10 +14,10 @@ export class AdminComponent implements OnInit {
   }
 
   aReporte(){
-    this.router.navigateByUrl('/reportes')
+    this.router.navigateByUrl('/admin/reporte') //a reporte de usuarios
   }
   aCitas(){
-    this.router.navigateByUrl('/citas')
+    this.router.navigateByUrl('admin/listar-citas-admin')
   }
 
 }

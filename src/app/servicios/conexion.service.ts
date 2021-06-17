@@ -18,7 +18,6 @@ export class ConexionService {
   constructor(private servicio:HttpClient) { }
 
   getAllCitas():Observable<any>{
-
     return this.servicio.get(`${this.servidor}/api/cita/all`);
   }
 
@@ -35,6 +34,7 @@ export class ConexionService {
     return this.servicio.get(`${this.servidor}/api/cita/paciente/${id}`);
   }
 
+
   addReserva(reserva:cita):Observable<any>{
     //REALIZARLO Q SE AGREGUE A LAS CITAS DE ESE PACIENTE O NO? JSON.stringify(reserva), httpOptions
     return this.servicio.post(`${this.servidor}/api/cita/anadirCita`, reserva );
@@ -49,6 +49,12 @@ export class ConexionService {
   }
 
 
+  actualizarCita(id:number):Observable<any>{
+    return this.servicio.put(`${this.servidor}/api/cita/editarCita`,id)
+  }
+  cancelarCita(Cita:cita):Observable<any>{
+    return this.servicio.put(`${this.servidor}/api/cita/cancelarCita`,Cita)
+  }
 
   //borrarNota
   //editarNota
