@@ -1,0 +1,13 @@
+<div class="container">
+    <form class="form" [formGroup]="form" (ngSubmit)="actHist()">  <!-- onSubmit crear funcion que valide campos-->
+    <label class="labelForm">Editar historia clinica de paciente:{{this.id}}</label>
+    <p>
+        <mat-form-field appearance="outline">
+        <mat-label>Historia Clinica</mat-label>
+        <textarea minlength="10" matInput placeholder="Historia clinica del paciente" formControlName="historia" type="textarea" class="input"></textarea>
+        </mat-form-field>
+    </p>
+    <p class="button-container field">
+        <button type="submit" mat-raised-button class="button" [disabled]="!form.valid">Actualizar</button>
+    </form>
+</div>

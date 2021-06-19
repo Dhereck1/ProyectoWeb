@@ -17,6 +17,9 @@ export class PacienteService {
     console.log(cliente)
     return this.servicio.post(`${this.servidor}/api/paciente/registro`,cliente)
   }
+  actHistoria(cliente:paciente):Observable<any>{
+    return this.servicio.put(`${this.servidor}/api/paciente/actHist`,cliente)
+  }
   setPacientes(lista:paciente[]){
     this.lista=lista;
   }

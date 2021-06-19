@@ -23,9 +23,9 @@ export class ReporteUsuariosComponent implements OnInit {
       this.Pacientes=datos;
     });
   }
-  editarHist(paciente: paciente){
-    console.log(paciente)
-    
+  
+  verHist(paciente: paciente){
+    this.router.navigate(["admin",paciente.idUsuario,"historia"])
   }
 
 }
