@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
 $form-bg: #78a5e9;
 $form-shadow: #130c0c;
 $label-color: #7f7f7f;
@@ -50,4 +50,123 @@ button:hover{
 
   mat-card-header{
       padding: 10px;
-  }
+  }*/
+  @import url('https://fonts.googleapis.com/css?family=Raleway:400,200');
+
+
+.main-container{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 60%;
+}
+
+.transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
+.card {
+    background-color: white;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    height: 450px;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 500px;
+}
+.card:hover {
+    background-color: rgb(234, 248, 250);
+    height: 450px;
+    width: 500px;
+}
+.card:hover .cta-container {
+    display: inline;
+    margin-top: 380px;
+}
+.card:hover .card_circle {
+    background-size: cover;
+    border-radius: 0;
+    margin-top: -180px;
+}
+.card:hover h2 {
+    background: #90bccafa;
+    color: #fff;
+    margin-top: 70px;
+    padding: 5px;
+}
+.card:hover h2 small { color: #fff }
+.card:hover p { margin-top: 200px }
+.card_circle {
+    background: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v333-ning-50-medical_2.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=ab3b6d63894ab5d209d235ecae93efbb') no-repeat center bottom;
+    background-color: white;
+    background-size: cover;
+    border-radius: 50%;
+    height: 370px;
+    margin-left: -75px;
+    margin-top: -270px;
+    position: absolute;
+    width: 650px;
+}
+h2 {
+    color: #7096a1fa;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    margin-top: 110px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+p {
+    color: rgba(0,0,0,.6);
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+    font-weight: normal;
+    margin-top: 190px;
+    position: absolute;
+    text-align: center;
+    z-index: 9999;
+}
+.cta-container {
+    display: none;
+    margin-top: 320px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+.cta {
+    -moz-border-radius: 2px;
+    -moz-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -o-transition: 0.2s ease-out;
+    -webkit-border-radius: 2px;
+    -webkit-transition: 0.2s ease-out;
+    background-clip: padding-box;
+    border: 2px solid #90bccafa;
+    border-radius: 2px;
+    color: #90bccafa;
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    height: 36px;
+    letter-spacing: 0.5px;
+    line-height: 36px;
+    margin-bottom: 15px;
+    padding: 0 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease-out;
+}
+.cta:hover {
+    background-color: #90bccafa;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

@@ -3,13 +3,15 @@
       <mat-chip-list aria-label="labels"></mat-chip-list>
   
       <div class="grid-container">
-        <mat-chip class="chip1" selected>Abierto</mat-chip>
-        <div *ngFor="let cita of abierta" class="column">
+        <mat-chip class="chip1" selected>Abierta</mat-chip>
+        <div *ngFor="let cita of abierta"  class="column">
           <mat-card *ngIf="cita.estado === 'Abierta'" class="card open" (click)="editarCita(cita)">
             <div>
-              <h3 class="title">{{cita.idCita}}</h3> <!--definir bien el titulo-->
-              <p  >{{cita.hora}}</p>
-              <!--<p>{{nombreMedico}}</p>-->
+              <h3 class="title">N ° de cita:  {{cita.idCita}}</h3> <!--definir bien el titulo-->
+              <p >Fecha: {{cita.fecha | date:'dd-MM-yyyy' }}</p>
+              <p >Hora: {{cita.hora}}</p>
+              <p> Nombre Medico: {{cita.medico}}</p>
+              <p> Nombre Paciente: {{cita.usuario}}</p>
             </div>
           </mat-card>
         </div>
@@ -20,9 +22,11 @@
         <div *ngFor="let cita of asignada" class="column">
           <mat-card *ngIf="cita.estado === 'Asignada'" class="card asign" (click)="editarCita(cita)">
             <div>
-              <h3 class="title">{{cita.idCita}}</h3> <!--definir bien el titulo-->
-              <p  >{{cita.hora}}</p>
-              <!--<p>{{nombreMedico}}</p>-->
+              <h3 class="title">N ° de cita: {{cita.idCita}}</h3>
+              <p >Fecha: {{cita.fecha | date:'dd-MM-yyyy' }}</p>
+              <p >Hora: {{cita.hora}}</p>
+              <p> Nombre Medico: {{cita.medico}}</p>
+              <p> Nombre Paciente: {{cita.usuario}}</p>
             </div>
           </mat-card>
         </div>
@@ -33,12 +37,17 @@
         <div *ngFor="let cita of cerrada" class="column">
           <mat-card *ngIf="cita.estado === 'Cerrada'" class="card closed">
             <div>
-              <h3 class="title">{{cita.idCita}}</h3> <!--definir bien el titulo-->
-              <p>{{cita.hora}}</p>
-              <!--<p>{{nombreMedico}}</p>-->
+              <h3 class="title">N ° de cita: {{cita.idCita}}</h3>
+              <p >Fecha: {{cita.fecha | date:'dd-MM-yyyy' }}</p>
+              <p >Hora: {{cita.hora}}</p>
+              <p> Nombre Medico: {{cita.medico}}</p>
+              <p> Nombre Paciente: {{cita.usuario}}</p>
             </div>
           </mat-card>
         </div>
       </div>
     </div>
   </div>
+  
+  
+  
