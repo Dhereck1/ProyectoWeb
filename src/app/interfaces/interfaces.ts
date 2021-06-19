@@ -15,7 +15,7 @@ export interface paciente{
 export interface cita{
     idCita: number;
     idUsuario: number;
-    idMedico: number;
+    idMedico?: number;
     fecha:string;
     hora:string;
     descripcion: string;

@@ -1,10 +1,10 @@
 <div class="container">
     <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">  <!-- onSubmit crear funcion que valide campos-->
-    <label class="labelForm">Reserva de Hora Cita N°: completar</label>
+    <label class="labelForm">Reserva de Hora cita N°:{{this.id}}</label>
     <p>
         <mat-form-field appearance="outline">
-            <mat-label>Nombre Paciente: </mat-label>  
-            <input matInput   type="text"class="input"> <!--DEBERIA ESTAR EL NOMBRE DEL PACIENTE YA PUESTO SEGUN EL IDUSARIO DE LA CITA -->
+            <mat-label>Nombre Paciente: {{pacienteActual}}</mat-label>  
+            <input matInput   type="text"class="input" value={{pacienteActual}}> <!--DEBERIA ESTAR EL NOMBRE DEL PACIENTE YA PUESTO SEGUN EL IDUSARIO DE LA CITA -->
         </mat-form-field>
     </p>
     <p>
@@ -34,9 +34,9 @@
         <mat-form-field appearance="outline">
             <mat-label>Estado</mat-label>
                 <select matNativeControl required formControlName="estado">
-                    <option value="abierta">Abierta</option>
-                    <option value="asignada">Asignada</option>
-                    <option value="cerrada">Cerrada</option>                
+                    <option value="Abierta">Abierta</option>
+                    <option value="Asignada">Asignada</option>
+                    <option value="Cerrada">Cerrada</option>                
                 </select>
             </mat-form-field>  
     </p>

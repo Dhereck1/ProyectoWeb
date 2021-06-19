@@ -36,15 +36,15 @@ export class ListarCitasAdminComponent implements OnInit {
 
       });
 
-      this.abierta = this.citas.filter((cita) => cita.estado === 'abierta');
-      this.asignada = this.citas.filter((cita) => cita.estado === 'asignada');
-      this.cerrada = this.citas.filter((cita) => cita.estado === 'cerrada');
+      this.abierta = this.citas.filter((cita) => cita.estado === 'Abierta');
+      this.asignada = this.citas.filter((cita) => cita.estado === 'Asignada');
+      this.cerrada = this.citas.filter((cita) => cita.estado === 'Cerrada');
     });
   }
 
   //hacer componente de form cita
   editarCita(id: any) {
-    this.router.navigate([`/formCitaComponent/${id}`]);
+    this.router.navigate([`admin/formCitaAdmi/${id}`]);
   }
 }
 
