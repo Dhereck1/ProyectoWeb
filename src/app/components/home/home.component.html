@@ -19,11 +19,10 @@
         <input matInput type="password" formControlName="password">
         <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Iniciar Sesión</button>
     </form>
-    <h4>¿No tienes cuenta?  <a href="/registro">Registrate aquí</a></h4>
-    
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Iniciar Sesión</button>
+    <h4>¿No tienes cuenta?  <a href="/registro">Registrate aquí</a></h4>
   </mat-card-actions>
 </mat-card>
