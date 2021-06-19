@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+$form-bg: #78a5e9;
+$form-shadow: #130c0c;
+$label-color: #7f7f7f;
+$button-bg:rgb(160, 244, 250);
+$button-color: #1e1f26;
+$fontColor: rgb(250, 245, 245);
+
+.container {
+  max-width: auto;
+  margin: 0 auto;
+  margin-top: 2em;
+  display:flex;
+  
+}
+
+.labelForm{
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:black;
+  font-style: italic;
+  letter-spacing: 3px;
+  font-weight:initial;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 40px;
+}
+
+.field {
+  margin-top: 3em;
+}
+.input-full-width {
+  width: 100%;
+}
+.form {
+  min-width: 150px;
+  max-width: 400px;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 1em;
+  background:linear-gradient(to right, #a9f3ed, #bde591) !important;
+  box-shadow: 6px 4px 1px $form-shadow, 6px 5px 1px 2px rgba(80, 223, 233, 0.527);
+  transition: .5s ease; 
+}
+
+mat-label {
+  color: black;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.button {
+  width: auto;
+  background-color: whitesmoke;
+  color: $button-color;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+.error {
+  color: $fontColor;
+}
+
+
+:host ::ng-deep .mat-form-field-underline {
+    /*display: none;*/
+    background-color: $button-bg !important;
+  }
+  
+:host ::ng-deep .mat-form-field-ripple {
+    background-color:$fontColor !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: rgb(236, 255, 253);
+}
+
+
+mat-form-field{
+  width:auto;
+  margin-left: 40px;
+  display: unset;
+}

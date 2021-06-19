@@ -22,6 +22,7 @@ import { HistoriaClinicaComponent } from './components/paciente/historia-clinica
 import { FormCitaAdminComponent } from './components/form-cita-admin/form-cita-admin.component';
 
 import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/reporte-usuarios.component';
+import { EditarHistoriaComponent } from './components/paciente/historia-clinica/editar-historia/editar-historia.component';
 
 
 
@@ -41,7 +42,8 @@ import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/re
     HistoriaClinicaComponent,
     ReporteUsuariosComponent,
     FormCitaAdminComponent,
-    ReporteUsuariosComponent
+    ReporteUsuariosComponent,
+    EditarHistoriaComponent
   ],
   imports: [
     BrowserModule,

@@ -13,15 +13,25 @@ export class HistoriaClinicaComponent implements OnInit {
   constructor(private router: Router , private route:ActivatedRoute , private servicio:PacienteService) { }
 
   id="";
+  rol:number;
   paciente:Array<paciente>=[];
 
 
   ngOnInit(): void {
 
     this.id=this.route.snapshot.paramMap.get('id') as string;
+    if(this.route.snapshot.data.viewOption=="paciente"){
+      this.rol=2
+    }else{
+      this.rol=1
+    }
     this.servicio.getPaciente(Number(this.id)).subscribe(dato=>{
       this.paciente=dato;
     })
+  }
+
+  editarHist(){
+    this.router.navigate(["admin",this.id,"historia","editar"])
   }
 
 }
