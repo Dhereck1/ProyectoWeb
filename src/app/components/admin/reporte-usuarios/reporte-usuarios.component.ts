@@ -1,3 +1,4 @@
+  
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { paciente } from 'src/app/interfaces/interfaces';
@@ -22,7 +23,8 @@ export class ReporteUsuariosComponent implements OnInit {
       this.Pacientes=datos;
     });
   }
-  editarHist(){
+  editarHist(paciente: paciente){
+    console.log(paciente)
     
   }
 
