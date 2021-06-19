@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { cita } from 'src/app/interfaces/interfaces';
+import { cita, medico } from 'src/app/interfaces/interfaces';
 import { ConexionService } from 'src/app/servicios/conexion.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class CitasComponent implements OnInit {
   abierta: Array<cita> = [];
   asignada: Array<cita> = [];
   cerrada: Array<cita> = [];
+  nombresMedico: Array<medico> = [];
 
   constructor(private router: Router , private route:ActivatedRoute , private servicio:ConexionService) { }
 
@@ -28,6 +29,23 @@ export class CitasComponent implements OnInit {
         this.asignada = this.citas.filter(cita => cita.estado === 'Asignada');
         this.cerrada = this.citas.filter(cita => cita.estado === 'Cerrada');
         console.log(this.asignada);
+
+
+        this.citas.forEach((cita) => {
+          if (cita.idMedico) {
+            this.servicio.getNombreMedById(cita.idMedico).subscribe((res2) => {
+              cita.medico = res2.nombre + ' ' + res2.apellido;
+            });
+          }
+          if (cita.idUsuario) {
+            this.servicio.getNombrePacById(cita.idUsuario).subscribe((res2) => {
+              cita.usuario = res2.nombre + ' ' + res2.apellido;
+              console.log(res2)
+            });
+          }
+  
+        });
+        
       }
     )
   }

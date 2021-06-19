@@ -1,5 +1,5 @@
 
-<div class="container">   
+<!--<div class="container">   
       <mat-card > 
         <mat-card-header>
           <i mat-card-avatar class="material-icons">how_to_reg</i>
@@ -7,8 +7,17 @@
           <mat-card-subtitle>Paciente: {{paciente[0].nombre}} {{paciente[0].apellido}}</mat-card-subtitle>
         </mat-card-header>  
        <mat-card-content>{{paciente[0].historiaClinica}}
-        </mat-card-content><!--{{paciente[0].historiaClinica}}-->   
-        <button mat-button *ngIf="paciente[0].rol!=2" >Actualizar</button> <!--(click)=editar() -->
+        </mat-card-content>{{paciente[0].historiaClinica}}-->   
+        <button mat-button *ngIf="paciente[0].rol!=2" >Actualizar</button> <!--(click)=editar()
       </mat-card>  
+  </div> -->
+  
+  <div class="main-container">
+    <div class="card transition">
+        <h2 class="transition" >Historia Clinica <br> Paciente: {{paciente[0].nombre}} {{paciente[0].apellido}}</h2>
+        <p> {{paciente[0].historiaClinica}}</p>
+        <div class="cta-container transition"><a href="#" class="cta" *ngIf="paciente[0].rol!=2">Editar</a></div> <!--aqui se agrega la funcion on click para modificar reporte-->
+        <div class="card_circle transition"></div>
+    </div>
   </div>
   

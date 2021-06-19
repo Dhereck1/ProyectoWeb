@@ -22,5 +22,8 @@ export class ReporteUsuariosComponent implements OnInit {
       this.Pacientes=datos;
     });
   }
+  editarHist(){
+    
+  }
 
 }
