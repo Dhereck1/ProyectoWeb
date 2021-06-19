@@ -36,15 +36,12 @@ import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/re
     AdminComponent,
     RegistroComponent,
     CitasComponent,
-
     ListarCitasAdminComponent,
     PedirCitaComponent,
-
     HistoriaClinicaComponent,
+    ReporteUsuariosComponent,
     FormCitaAdminComponent,
     ReporteUsuariosComponent
-
-
   ],
   imports: [
     BrowserModule,

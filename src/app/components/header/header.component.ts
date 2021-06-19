@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/servicios/storage.service';
 import { ConexionService } from '../../servicios/conexion.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ConexionService } from '../../servicios/conexion.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private servicio:ConexionService) { }
+  constructor(private servicio:ConexionService, private storage:StorageService) { }
 
 
   ngOnInit(): void {
@@ -19,6 +20,10 @@ export class HeaderComponent implements OnInit {
     this.servicio.getAllCitas().subscribe(citas =>{
       console.log(citas);
     });
+  }
+
+  cerrarSesion(){
+    this.storage.CerrarSession();
   }
 
 }

@@ -1,7 +1,7 @@
 
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Log in</mat-card-title>
+    <mat-card-title>Inicio Sesión</mat-card-title>
   </mat-card-header>
   <mat-card-content>
 
@@ -16,12 +16,14 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Contraseña</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
+        <input matInput type="password" formControlName="password">
+        <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Login</button>
     </form>
+    <h4>¿No tienes cuenta?  <a href="/registro">Registrate aquí</a></h4>
+    
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Iniciar Sesión</button>
+  </mat-card-actions>
 </mat-card>
