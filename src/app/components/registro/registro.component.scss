@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
 $form-bg: #78a5e9;
 $form-shadow: #130c0c;
 $label-color: #7f7f7f;
@@ -18,8 +21,11 @@ $green: #7ed321;
   font-weight: 500;
   margin-bottom: 20px;
   color:$green;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-left: 40px;
+  text-transform: uppercase;
+  font: bold 18px/70px Arial;
+  transform: scaleX(0.8);
+  letter-spacing: 3px;
+  font-style: italic;
 }
 
 .field {

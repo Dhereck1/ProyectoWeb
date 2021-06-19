@@ -3,9 +3,9 @@ $size-shadow: 5px 5px 0px 0px;
 $size-shadow-hover: 15px 15px 0px 0px;
 
 $green: #7ed321;
-$abierta: rgb(248, 234, 109);
-$asignada: rgb(160, 244, 250);
-$cerrada: rgb(154, 152, 247);
+$abierta: rgb(243, 225, 63);
+$asignada: rgb(94, 238, 248);
+$cerrada: rgb(123, 120, 250);
 
 $abierta-bg: #c1b1db;
 $abierta-bg-shadow: #ebdea6;
@@ -29,6 +29,8 @@ $cerrada-shadow-hover:  lighten($cerrada-bg-shadow, 10%);
   display: flex;
   flex-direction: column;
   
+  
+  
 }
 .main-container {
   display: flex;
@@ -36,6 +38,7 @@ $cerrada-shadow-hover:  lighten($cerrada-bg-shadow, 10%);
   margin: 0 auto;
   margin-bottom: 50%;
 }
+
 .grid-container {
   width: 25%;
   margin: 0 auto;

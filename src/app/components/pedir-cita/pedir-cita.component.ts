@@ -29,6 +29,7 @@ export class PedirCitaComponent implements OnInit {
     });
 
     this.id = this.activatedR.snapshot.paramMap.get("id") as string;
+    //console.log(this.id);
 
   }
 
@@ -37,21 +38,23 @@ export class PedirCitaComponent implements OnInit {
 
     if (this.form.invalid) {
       return;
-    }/*else{
+    }else{
       const reserva: cita = {
         descripcion: this.form.controls.descripcion.value,
         idCita: 0,
-        idUsuario: Number(this.id),
-
-        
-        
+        idUsuario: Number(this.id), //Number(this.id)
+        //idMedico:0, // cambiar porque no lo asigna altiro 
+        fecha: "no asignado",
+        hora: "no asignado",
+        estado: "Abierta" 
       };
 
-     // this.conexion_service.addCita(reserva); hay que crear el add
+      this.conexion_service.addReserva(reserva).subscribe(nueva=>{ //nueva reserva
+        console.log(`${nueva} Fue añadadida`)
+      });
       // this.form.reset();
-      this.router.navigate(['']) //definir que se va a vista paciente
-
-    }*/
+      this.router.navigate(['paciente',this.id]) //definir que se va a vista paciente
+    }
   }
 
 }

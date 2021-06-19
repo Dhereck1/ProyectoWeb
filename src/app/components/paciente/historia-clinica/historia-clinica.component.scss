@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+$form-bg: #78a5e9;
+$form-shadow: #130c0c;
+$label-color: #7f7f7f;
+$button-bg:rgb(160, 244, 250);
+$button-color: #1e1f26;
+$green: #7ed321;
+
+.container{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    padding-left: 50px;
+    margin: 0 auto;
+    margin-bottom: 50%;
+    margin-top: 5%;
+}
+
+mat-card {
+    max-width: 400px;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-style: italic;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    
+    
+  }
+
+button{
+    width: auto;
+    background-color: $green;
+    color: $button-color;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    
+}
+
+button:hover{
+    box-shadow: -3px 3px 1px $button-bg;
+}
+
+ 
+
+  mat-card-header{
+      padding: 10px;
+  }

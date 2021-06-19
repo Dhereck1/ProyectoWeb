@@ -18,7 +18,11 @@ import { ListarCitasAdminComponent } from './components/listar-citas-admin/lista
 import { PedirCitaComponent } from './components/pedir-cita/pedir-cita.component';
 
 import { HistoriaClinicaComponent } from './components/paciente/historia-clinica/historia-clinica.component';
+
+import { FormCitaAdminComponent } from './components/form-cita-admin/form-cita-admin.component';
+
 import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/reporte-usuarios.component';
+
 
 
 
@@ -32,12 +36,12 @@ import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/re
     AdminComponent,
     RegistroComponent,
     CitasComponent,
-
     ListarCitasAdminComponent,
     PedirCitaComponent,
     HistoriaClinicaComponent,
     ReporteUsuariosComponent,
-
+    FormCitaAdminComponent,
+    ReporteUsuariosComponent
   ],
   imports: [
     BrowserModule,

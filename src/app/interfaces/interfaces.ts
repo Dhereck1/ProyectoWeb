@@ -15,16 +15,19 @@ export interface paciente{
 export interface cita{
     idCita: number;
     idUsuario: number;
-    idMedico: number;
+    idMedico?: number;
     fecha:string;
     hora:string;
     descripcion: string;
     estado:string;
+    medico?: string; // ?  significa que este campo es opcional
+    usuario?: string;
 }
 
 export interface medico{
     idMedico: number;
     nombre: string;
     apellido: string;
-    especialidad: string;
+    especialidad: number;
+    especialidadNombre?: string;
 }

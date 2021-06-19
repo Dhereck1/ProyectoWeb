@@ -1,2 +1,14 @@
-<p>historia-clinica works!</p>
-<p>{{paciente[0].historiaClinica}}</p>
+
+<div class="container">   
+      <mat-card > 
+        <mat-card-header>
+          <i mat-card-avatar class="material-icons">how_to_reg</i>
+          <mat-card-title>HISTORIA CLINICA</mat-card-title>
+          <mat-card-subtitle>Paciente: {{paciente[0].nombre}} {{paciente[0].apellido}}</mat-card-subtitle>
+        </mat-card-header>  
+       <mat-card-content>{{paciente[0].historiaClinica}}
+        </mat-card-content><!--{{paciente[0].historiaClinica}}-->   
+        <button mat-button *ngIf="paciente[0].rol!=2" >Actualizar</button> <!--(click)=editar() -->
+      </mat-card>  
+  </div>
+  
