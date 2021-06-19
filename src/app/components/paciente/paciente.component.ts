@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
+import { StorageService } from 'src/app/servicios/storage.service';
 
 @Component({
   selector: 'app-paciente',
@@ -8,12 +9,21 @@ import {Router,ActivatedRoute} from '@angular/router';
 })
 export class PacienteComponent implements OnInit {
 
-  id = ''
+  id = '';
 
-  constructor(private router: Router , private route:ActivatedRoute) { }
+  constructor(private router: Router , private route:ActivatedRoute, private storage:StorageService) { }
 
   ngOnInit(): void {
     this.id=this.route.snapshot.paramMap.get('id') as string;
+
+    if(!this.storage.getCurrentUser()){
+      window.location.href="/home";
+    }
+
+  }
+
+  cerrarSession(){
+    this.storage.CerrarSession();
   }
 
   irCitas(){

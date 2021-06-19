@@ -9,9 +9,10 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  validarLogin(rut:string, password:string):Observable<any>{
+  validarLogin(rut:string, password:string, token:string):Observable<any>{
     let headers= new HttpHeaders();
-    headers.append('Content-Type','aplication/json');
+    headers= headers.append('Content-Type','application/json');
+    headers= headers.append('access-token', token)
 
     const params= new HttpParams();
     params.set("rut",rut);
@@ -23,7 +24,11 @@ export class LoginService {
 
     login.rut=rut;
     login.password=password;
-    //return this.http.get(`http://localhost:3500/api/paciente/login?rut=${JSON.stringify(rut)}&password=${JSON.stringify(password)}`);
-    return this.http.post('http://localhost:3500/api/paciente/login', login);
+    //return this.http.get(`http://localhost:3500/api/paciente/login?rut=${rut}&password=${password}`);
+    return this.http.post('http://localhost:3500/api/paciente/login', login, {'headers': headers});
+  }
+
+  Token():Observable<any>{
+    return this.http.get('http://localhost:3500/api/paciente/token');
   }
 }

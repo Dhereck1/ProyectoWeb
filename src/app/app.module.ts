@@ -36,7 +36,7 @@ import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/re
     ListarCitasAdminComponent,
     PedirCitaComponent,
     HistoriaClinicaComponent,
-    ReporteUsuariosComponent
+    ReporteUsuariosComponent,
 
   ],
   imports: [
