@@ -54,10 +54,13 @@ export class FormCitaAdminComponent implements OnInit {
       this.citaActual=cita
       this.form.get("descripcion")?.setValue(this.citaActual[0].descripcion)
       this.form.get("estado")?.setValue(this.citaActual[0].estado)
-    })
+      this.form.get("medico")?.setValue(this.citaActual[0].idMedico)
+      this.form.get("fecha")?.setValue(this.citaActual[0].fecha)
+      this.form.get("hora")?.setValue(this.citaActual[0].hora)
 
-    this.servicePaciente.getPaciente(Number(this.id)).subscribe(paciente=>{
-      this.pacienteActual=paciente[0].nombre + " " + paciente[0].apellido
+      this.servicePaciente.getPaciente(this.citaActual[0].idUsuario).subscribe(paciente=>{
+        this.pacienteActual=paciente[0].nombre + " " + paciente[0].apellido
+      })
     })
     
 
