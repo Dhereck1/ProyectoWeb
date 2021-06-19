@@ -4,20 +4,25 @@ $form-shadow: #130c0c;
 $label-color: #7f7f7f;
 $button-bg:rgb(160, 244, 250);
 $button-color: #1e1f26;
-$green: #7ed321;
+$fontColor: rgb(250, 245, 245);
 
 .container {
   max-width: auto;
   margin: 0 auto;
   margin-top: 2em;
   display:flex;
+  
 }
 
 .labelForm{
   font-size: 1.1rem;
   font-weight: 500;
+  margin-top: 20px;
   margin-bottom: 20px;
-  color:$green;
+  color:black;
+  font-style: italic;
+  letter-spacing: 3px;
+  font-weight:initial;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-left: 40px;
 }
@@ -37,16 +42,14 @@ $green: #7ed321;
   flex-direction: column;
   border-radius: 10px;
   padding: 1em;
-  background: linear-gradient(to right, #f7f7f7, #fcfcfc) !important;
+  background:linear-gradient(to right, #a9f3ed, #bde591) !important;
   box-shadow: 6px 4px 1px $form-shadow, 6px 5px 1px 2px rgba(80, 223, 233, 0.527);
   transition: .5s ease; 
 }
 
-.mat-label {
-  color: $button-bg;
-  font-size: 1.1rem;
-  font-weight: 500;
-  font-family: Fjalla One;
+mat-label {
+  color: black;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .button-container {
@@ -55,7 +58,7 @@ $green: #7ed321;
 }
 .button {
   width: auto;
-  background-color: $green;
+  background-color: whitesmoke;
   color: $button-color;
   font-weight: 400;
   font-size: 12px;
@@ -64,7 +67,7 @@ $green: #7ed321;
   margin-left: 20px;
 }
 .error {
-  color: $green;
+  color: $fontColor;
 }
 
 
@@ -74,7 +77,11 @@ $green: #7ed321;
   }
   
 :host ::ng-deep .mat-form-field-ripple {
-    background-color:$green !important;
+    background-color:$fontColor !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: rgb(236, 255, 253);
 }
 
 

@@ -29,6 +29,8 @@ $cerrada-shadow-hover:  lighten($cerrada-bg-shadow, 10%);
   display: flex;
   flex-direction: column;
   
+  
+  
 }
 .main-container {
   display: flex;
@@ -36,6 +38,7 @@ $cerrada-shadow-hover:  lighten($cerrada-bg-shadow, 10%);
   margin: 0 auto;
   margin-bottom: 50%;
 }
+
 .grid-container {
   width: 25%;
   margin: 0 auto;
