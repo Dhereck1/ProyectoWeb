@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+$buttonColor1: rgb(194, 230, 96);
+$buttonHover:rgb(245, 247, 249);
+$prim: #22cdda;
+
+.container {
+    overflow: hidden; 
+}
+
+.example-button-row{  
+    margin: 0  auto;
+    margin-bottom: 30%;
+    max-width: 600px;
+	  padding: 80px 0;
+	  height: 200px;
+    flex-direction: column;
+}
+
+.btn1{
+    margin-left: 650px;
+}
+
+.btn2{
+    margin-left: 325px;
+}
+
+.btn3{
+    margin-left: 0px;
+}
+
+
+  a { 
+    cursor: pointer;
+    text-align: center;
+    background-color:$buttonColor1;
+    width: 290px;
+    height: 70px;
+    line-height: 64px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    //margin-left: 500px;
+    z-index: 0;
+    box-shadow: 0px 0px 17px 1px rgba(0, 0, 0, 0.34);
+    span {
+      color: #fff;
+      display: block;
+      
+      text-transform: uppercase;
+      font: bold 18px/66px Arial;
+      transform: scaleX(0.6);
+      letter-spacing: 3px;
+      transform-origin: center left;
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 1;
+      
+    }
+    em {
+      position: absolute;
+      height: 1px;
+      background: #fff;
+      width: 25%;
+      right: 23px;
+      top: 50%;
+      transform: scaleX(0.25);
+      transform-origin: center right;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+    &:before, &:after {
+      content: '';
+      background: #fff;
+      height: 50%;
+      width: 0;
+      position: absolute;
+      transition: .3s cubic-bezier(.785,.135,.15,.86);
+    }
+    &:before {
+      top: 0;
+      left: 0;
+      right: auto;
+    }
+    &:after {
+      bottom: 0;
+      right: 0;
+      left: auto;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+        right: 0;
+        left: auto;
+      }
+      &:after {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+      span {
+        color: #000;
+      }
+      em {
+        background: #000;
+        transform: scaleX(1);
+      }
+    }
+} 

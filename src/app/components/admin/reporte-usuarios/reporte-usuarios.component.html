@@ -1,3 +1,8 @@
-<div *ngFor="let paciente of Pacientes">
-    {{paciente.nombre}}
+<div class="main-container">
+    <div class="card transition" *ngFor="let paciente of Pacientes">
+        <h2 class="transition" >Historia Clinica <br> Paciente: {{paciente.nombre}} {{paciente.apellido}}</h2>
+        <p> {{paciente.historiaClinica}} Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <div class="cta-container transition"><a href="#" class="cta">Editar</a></div> <!--aqui se agrega la funcion on click para modificar reporte-->
+        <div class="card_circle transition"></div>
+    </div>
 </div>
