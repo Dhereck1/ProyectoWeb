@@ -26,9 +26,9 @@ const routes: Routes = [
   {path:'paciente/:id/citas',component:CitasComponent},
   {path: 'admin/listar-citas-admin', component: ListarCitasAdminComponent},
   {path: 'admin/reporte', component: ReporteUsuariosComponent},
-  {path: 'reserva', component:PedirCitaComponent},
+  {path: 'paciente/:id/reserva', component:PedirCitaComponent},
   {path:'paciente/:id/historia',component:HistoriaClinicaComponent},
-  {path: 'formCitaAdmi', component: FormCitaAdminComponent},
+  {path: 'admin/formCitaAdmi/:id', component: FormCitaAdminComponent},
   {path:'', redirectTo: '/home', pathMatch: 'full' }
 ];
 

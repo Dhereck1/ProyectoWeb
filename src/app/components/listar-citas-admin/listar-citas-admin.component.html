@@ -5,7 +5,7 @@
       <div class="grid-container">
         <mat-chip class="chip1" selected>Abierta</mat-chip>
         <div *ngFor="let cita of abierta"  class="column">
-          <mat-card *ngIf="cita.estado === 'abierta'" class="card open" (click)="editarCita(cita.idCita)">
+          <mat-card *ngIf="cita.estado === 'Abierta'" class="card open" (click)="editarCita(cita.idCita)">
             <div>
               <h3 class="title">N ° de cita:  {{cita.idCita}}</h3> <!--definir bien el titulo-->
               <p >Fecha: {{cita.fecha | date:'dd-MM-yyyy' }}</p>
@@ -20,7 +20,7 @@
       <div class="grid-container"> 
         <mat-chip class="chip2" selected>Asignada</mat-chip>
         <div *ngFor="let cita of asignada" class="column">
-          <mat-card *ngIf="cita.estado === 'asignada'" class="card asign" (click)="editarCita(cita.idCita)">
+          <mat-card *ngIf="cita.estado === 'Asignada'" class="card asign" (click)="editarCita(cita.idCita)">
             <div>
               <h3 class="title">N ° de cita: {{cita.idCita}}</h3>
               <p >Fecha: {{cita.fecha | date:'dd-MM-yyyy' }}</p>
@@ -35,7 +35,7 @@
       <div class="grid-container">
         <mat-chip class="chip3" selected>Cerrada</mat-chip>
         <div *ngFor="let cita of cerrada" class="column">
-          <mat-card *ngIf="cita.estado === 'cerrada'" class="card closed" (click)="editarCita(cita.idCita)">
+          <mat-card *ngIf="cita.estado === 'Cerrada'" class="card closed" (click)="editarCita(cita.idCita)">
             <div>
               <h3 class="title">N ° de cita: {{cita.idCita}}</h3>
               <p >Fecha: {{cita.fecha | date:'dd-MM-yyyy' }}</p>

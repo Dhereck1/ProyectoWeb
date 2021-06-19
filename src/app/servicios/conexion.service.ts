@@ -21,6 +21,10 @@ export class ConexionService {
     return this.servicio.get(`${this.servidor}/api/cita/all`);
   }
 
+  getCita(id:number):Observable<any>{
+    return this.servicio.get(`${this.servidor}/api/cita/citaById/${id}`);
+  }
+
   getCitaById(id:number):Observable<any>{
 
     return this.servicio.get(`${this.servidor}/api/cita/${id}`);
@@ -37,7 +41,8 @@ export class ConexionService {
 
   addReserva(reserva:cita):Observable<any>{
     //REALIZARLO Q SE AGREGUE A LAS CITAS DE ESE PACIENTE O NO? JSON.stringify(reserva), httpOptions
-    return this.servicio.post(`${this.servidor}/api/cita/anadirCita`, reserva );
+    //Benja: Con que tenga su id asignado en el tipo cita, ya le pertenece ya que cuando pedimos citas, estas se buscan por id de paciente
+    return this.servicio.post(`${this.servidor}/api/cita/anadirCita`, reserva);
   }
 
   getAllMeds():Observable<any>{
@@ -49,8 +54,8 @@ export class ConexionService {
   }
 
 
-  actualizarCita(id:number):Observable<any>{
-    return this.servicio.put(`${this.servidor}/api/cita/editarCita`,id)
+  actualizarCita(Cita:cita):Observable<any>{
+    return this.servicio.put(`${this.servidor}/api/cita/editarCita`,Cita)
   }
   cancelarCita(Cita:cita):Observable<any>{
     return this.servicio.put(`${this.servidor}/api/cita/cancelarCita`,Cita)
