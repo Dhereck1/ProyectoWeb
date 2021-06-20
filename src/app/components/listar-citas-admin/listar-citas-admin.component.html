@@ -1,5 +1,40 @@
 <div class="container">
     <div  class="main-container">
+
+      <div class="filtros">
+        <mat-label>Paciente</mat-label>
+        <mat-select (selectionChange)="setPac($event.value)">
+          <mat-option>todos</mat-option> 
+            <mat-option *ngFor="let paciente of pacientes" [value]="paciente.idUsuario">
+            {{paciente.nombre}} {{paciente.apellido}}
+            </mat-option>
+        </mat-select>
+
+        <mat-label>Medico</mat-label>
+        <mat-select (selectionChange)="setMed($event.value)">
+          <mat-option>todos</mat-option> 
+            <mat-option *ngFor="let medico of medicos" [value]="medico.idMedico">
+            {{medico.nombre}} {{medico.apellido}}
+            </mat-option>
+        </mat-select>
+
+        <mat-label>Estado</mat-label>
+        <mat-select (selectionChange)="setEst($event.value)">
+          <mat-option>todos</mat-option> 
+            <mat-option value="Abierta">
+              abierta
+            </mat-option>
+            <mat-option value="Asignada">
+              asignada
+            </mat-option>
+            <mat-option value="Cerrada">
+              cerrada
+            </mat-option>
+        </mat-select>
+        <p class="button-container field">
+          <button (click)="appFiltro()" mat-raised-button class="button">Aplicar Filtros</button></p>
+      </div>
+
       <mat-chip-list aria-label="labels"></mat-chip-list>
   
       <div class="grid-container">
