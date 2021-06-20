@@ -38,6 +38,8 @@ export class FormCitaAdminComponent implements OnInit {
       descripcion: ['', [Validators.required]]
     });
 
+    
+
     this.service.getAllMeds().subscribe(meds =>{ 
       this.listaMedicos = meds;
 
