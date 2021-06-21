@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { PacienteService } from 'src/app/servicios/paciente.service';
 import { cita, medico, paciente } from '../../interfaces/interfaces';
 import { ConexionService } from '../../servicios/conexion.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
+
 
 @Component({
   selector: 'app-listar-citas-admin',
@@ -31,7 +32,8 @@ export class ListarCitasAdminComponent implements OnInit {
     private servicioDatos: ConexionService, 
     private router: Router, 
     private servicePaciente:PacienteService,
-    private observer: BreakpointObserver
+    private observer: BreakpointObserver,
+    private cdref: ChangeDetectorRef
     ) {}
 
   ngOnInit(): void {
@@ -66,6 +68,7 @@ export class ListarCitasAdminComponent implements OnInit {
       this.asignada = this.citas.filter((cita) => cita.estado === 'Asignada');
       this.cerrada = this.citas.filter((cita) => cita.estado === 'Cerrada');
     });
+    
   }
 
   ngAfterViewInit() {
@@ -78,6 +81,7 @@ export class ListarCitasAdminComponent implements OnInit {
         this.sidenav.open();
       }
     });
+    this.cdref.detectChanges();
   }
 
   editarCita(id: any) {
