@@ -1,11 +1,51 @@
+$header: rgb(16 173 188 / 54%);
+$button:#7ad1d2;
+
+mat-card-title{
+  letter-spacing: 2px;
+}
+
 mat-card {
     max-width: 300px;
     margin: 2em auto;
+    margin-top:5%;
     text-align: center;
-  }
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  border-radius: 10px;
+    background: linear-gradient(to right, #eeeeee, #fcfcfc) !important;
+    box-shadow: 4px 3px 1px black, 6px 5px 1px 2px rgba(21, 168, 179, 0.527);
+}
+  
   
   mat-form-field {
     display: block;
     margin: 2em auto;
   }
+
+  .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    background-color: $button;
+}
+
+:host ::ng-deep .mat-form-field-ripple {
+  background-color:$button !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: rgb(144, 161, 160) !important;
+}
+
+.mat-form-field.mat-warn .mat-input-element, .mat-form-field-invalid .mat-input-element {
+  caret-color: #6285d1;
+}
+
+:host ::ng-deep .mat-form-field-invalid .mat-input-element {
+  color:chartreuse !important;
+}
+
+button:hover{
+  color:rgb(120, 16, 206);
+  transition: .5s ease; 
+}
 

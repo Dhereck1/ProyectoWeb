@@ -9,8 +9,9 @@ $fontColor: rgb(250, 245, 245);
 .container {
   max-width: auto;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 5em;
   display:flex;
+  margin-bottom: 20%;
   
 }
 
@@ -20,11 +21,10 @@ $fontColor: rgb(250, 245, 245);
   margin-top: 20px;
   margin-bottom: 20px;
   color:black;
-  font-style: italic;
   letter-spacing: 3px;
   font-weight:initial;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-left: 40px;
+  margin-left: 25px;
 }
 
 .field {
@@ -42,7 +42,7 @@ $fontColor: rgb(250, 245, 245);
   flex-direction: column;
   border-radius: 10px;
   padding: 1em;
-  background:linear-gradient(to right, #a9f3ed, #bde591) !important;
+  background:linear-gradient(to right,rgb(16 173 188 / 54%), #d6ffaa) !important;
   box-shadow: 6px 4px 1px $form-shadow, 6px 5px 1px 2px rgba(80, 223, 233, 0.527);
   transition: .5s ease; 
 }

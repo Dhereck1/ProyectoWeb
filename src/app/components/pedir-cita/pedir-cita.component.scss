@@ -21,7 +21,7 @@ $green: #7ed321;
   font-weight: 500;
   margin-bottom: 20px;
   margin-top: 20px;
-  color:rgb(133, 133, 133);
+  color:rgb(83, 83, 83);
   font: weight 100px;;
   font-style: italic;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,7 +43,7 @@ $green: #7ed321;
   flex-direction: column;
   border-radius: 10px;
   padding: 1em;
-  background:linear-gradient(to right, #a9f3ed, #bde591) !important;
+  background:linear-gradient(to right, rgb(16 173 188 / 54%), #d6ffaa) !important;
   box-shadow: 6px 4px 1px $form-shadow, 6px 5px 1px 2px rgba(80, 223, 233, 0.527);
   transition: .5s ease; 
 }

@@ -1,6 +1,6 @@
 <div class="container">
     <form class="form" [formGroup]="form" (ngSubmit)="actHist()">  <!-- onSubmit crear funcion que valide campos-->
-    <label class="labelForm">Editar historia clinica de paciente:{{this.id}}</label>
+    <label class="labelForm">Editar historia clínica de paciente: {{this.paciente.nombre}} {{this.paciente.apellido}}</label>
     <p>
         <mat-form-field appearance="outline">
         <mat-label>Historia Clinica</mat-label>

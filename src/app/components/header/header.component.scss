@@ -1,4 +1,6 @@
-$green: #7ed321;
+$header: rgb(16 173 188 / 54%);
+$button:rgb(0 0 0 / 12%);
+
 .example-spacer {
     flex: 1 1 auto;
        
@@ -7,9 +9,15 @@ $green: #7ed321;
 .title{
   font-style: italic;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 mat-toolbar{
-  background-color: $green;
-  color: whitesmoke;
+  background-color: $header;
+  color: rgb(255, 255, 255);
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color: $button;
 }

@@ -1,3 +1,6 @@
+
+<h1>Listado de Pacientes</h1>
+<h3>Hacer "click" en tarjeta para editar</h3>
 <div class="main-container">
     <div class="card transition" *ngFor="let paciente of Pacientes" (click)="verHist(paciente)">
         <h2 class="transition" >Paciente: {{paciente.nombre}} {{paciente.apellido}}</h2>
