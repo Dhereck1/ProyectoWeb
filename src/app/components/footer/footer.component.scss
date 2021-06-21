@@ -1,4 +1,6 @@
-$green: #7ed321;
+$footer: rgb(16 173 188 / 54%);
+$button:#7ad1d2;
+
 
 .footer-demo {
     height: 100%; /* Angular material adds "height:100%" to body tag by default. So, ignore this step in real-time application */
@@ -20,7 +22,8 @@ $green: #7ed321;
     background-color: #fdfdfd;
     display: flex;
     margin-top: 200px;
-    color:$green;
+    color:$button;
+    font-weight: bold;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

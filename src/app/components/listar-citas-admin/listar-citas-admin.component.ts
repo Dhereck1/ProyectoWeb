@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { PacienteService } from 'src/app/servicios/paciente.service';
 import { cita, medico, paciente } from '../../interfaces/interfaces';
 import { ConexionService } from '../../servicios/conexion.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-listar-citas-admin',
@@ -23,7 +25,14 @@ export class ListarCitasAdminComponent implements OnInit {
   filtroEstado:string
   inicial=""
 
-  constructor(private servicioDatos: ConexionService, private router: Router, private servicePaciente:PacienteService) {}
+  @ViewChild(MatSidenav) sidenav!: MatSidenav;
+
+  constructor(
+    private servicioDatos: ConexionService, 
+    private router: Router, 
+    private servicePaciente:PacienteService,
+    private observer: BreakpointObserver
+    ) {}
 
   ngOnInit(): void {
 
@@ -59,7 +68,18 @@ export class ListarCitasAdminComponent implements OnInit {
     });
   }
 
-  //hacer componente de form cita
+  ngAfterViewInit() {
+    this.observer.observe(['(max-width:800px)']).subscribe((res) => {
+      if(res.matches){
+        this.sidenav.mode = 'over';
+        this.sidenav.close();
+      }else{
+        this.sidenav.mode= 'side';
+        this.sidenav.open();
+      }
+    });
+  }
+
   editarCita(id: any) {
     this.router.navigate([`admin/formCitaAdmi/${id}`]);
   }

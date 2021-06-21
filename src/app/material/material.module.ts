@@ -8,6 +8,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
 
 const MaterialComponents =[
   MatToolbarModule,
@@ -18,7 +20,9 @@ const MaterialComponents =[
   MatCardModule,
   MatSelectModule,
   MatChipsModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatSidenavModule,
+  MatDividerModule
 ]
 
 

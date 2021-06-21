@@ -79,8 +79,9 @@ export class FormCitaAdminComponent implements OnInit {
       this.citaActual[0].idMedico=this.form.get("medico")?.value
       console.log(this.citaActual[0])
       this.service.actualizarCita(this.citaActual[0]).subscribe(respuesta=>{
-        console.log(respuesta)
+        console.log(respuesta) //sweet alert aqui 
       })
+      this.router.navigate(['admin/listar-citas-admin']);
     }
   }
 }
