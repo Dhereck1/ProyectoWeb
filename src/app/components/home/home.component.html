@@ -13,6 +13,9 @@
         <mat-icon matSuffix>person_outline</mat-icon>
         <mat-hint>ejemplo: 12345678-9</mat-hint>
       </mat-form-field>
+      <div *ngIf="formulario.get('rut').hasError('pattern')" class="alert alert-danger" role="alert">
+        Formato RUT no es correcto
+      </div>
 
       <mat-form-field appearance="fill">
         <mat-label>Contraseña</mat-label>

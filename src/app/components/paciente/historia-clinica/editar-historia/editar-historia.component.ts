@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { paciente } from 'src/app/interfaces/interfaces';
 import { ConexionService } from 'src/app/servicios/conexion.service';
 import { PacienteService } from 'src/app/servicios/paciente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-historia',
@@ -40,6 +41,10 @@ export class EditarHistoriaComponent implements OnInit {
     this.paciente.historiaClinica=this.form.get("historia").value
     this.servicePaciente.actHistoria(this.paciente).subscribe(res=>{
       console.log(res);
+      Swal.fire({
+        title: "Se ha actualizado la historia clinica",
+        icon:"success"
+      })
     })
     this.router.navigate(["admin","reporte"])
 

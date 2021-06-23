@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Session } from '../../session';
 import { LoginService } from 'src/app/servicios/login.service';
 import { StorageService } from 'src/app/servicios/storage.service';
+import { swalProviderToken } from '@sweetalert2/ngx-sweetalert2/lib/di';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private form:FormBuilder, private servicio:LoginService, private router: Router, private storage:StorageService) { 
     this.formulario=this.form.group({
-      rut:['', Validators.required],
+      rut:['', [Validators.required,Validators.pattern("[0-9]{1,10}\-[K|k|0-9]")]],
       password:['', Validators.required]
     });
   }
@@ -55,7 +57,12 @@ export class HomeComponent implements OnInit {
       this.servicio.validarLogin(this.formulario.get("rut")?.value , this.formulario.get("password")?.value, this.token).subscribe(datos=>{
         console.log(datos);
         if(datos.length == 0){
-          this.mensaje="Login no existe";
+          //this.mensaje="Login no existe";
+          Swal.fire({
+            title: "Error de inicio",
+            text:"Usuario y/o contraseña incorrecta",
+            icon:"error"
+          })
         }else{
           datos={token:datos[0].idUsuario, usuario:datos[0].rut};
           this.storage.CrearSession(datos);

@@ -23,7 +23,8 @@ import { FormCitaAdminComponent } from './components/form-cita-admin/form-cita-a
 
 import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/reporte-usuarios.component';
 import { EditarHistoriaComponent } from './components/paciente/historia-clinica/editar-historia/editar-historia.component';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -51,7 +52,9 @@ import { EditarHistoriaComponent } from './components/paciente/historia-clinica/
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    SweetAlert2Module,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

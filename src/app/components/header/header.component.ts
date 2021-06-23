@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/servicios/storage.service';
 import { ConexionService } from '../../servicios/conexion.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { ConexionService } from '../../servicios/conexion.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private servicio:ConexionService, private storage:StorageService) { }
+  constructor(private servicio:ConexionService, private storage:StorageService, private router:Router) { }
 
 
   ngOnInit(): void {
@@ -25,6 +26,10 @@ export class HeaderComponent implements OnInit {
 
   cerrarSesion(){
     this.storage.CerrarSession();
+  }
+
+  goHome(){
+    this.router.navigate(['']);
   }
 
 }

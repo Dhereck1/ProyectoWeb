@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { cita } from 'src/app/interfaces/interfaces';
 import { ConexionService } from '../../servicios/conexion.service';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pedir-cita',
@@ -51,6 +51,11 @@ export class PedirCitaComponent implements OnInit {
 
       this.conexion_service.addReserva(reserva).subscribe(nueva=>{ //nueva reserva
         console.log(`${nueva} Fue añadadida`)
+        Swal.fire({
+          title: "Operación exitosa",
+          text:"Reserva realizada",
+          icon:"success"
+        })
       });
       // this.form.reset();
       this.router.navigate(['paciente',this.id]) //definir que se va a vista paciente

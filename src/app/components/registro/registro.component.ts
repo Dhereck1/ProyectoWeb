@@ -6,7 +6,7 @@ import { ConexionService } from '../../servicios/conexion.service';
 import { LugaresService } from '../../servicios/lugares.service';
 import { Regiones } from '../../interfaces/regiones';
 import { PacienteService } from '../../servicios/paciente.service';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -20,6 +20,7 @@ export class RegistroComponent implements OnInit {
   p!: paciente;
   listaRegiones: Regiones[] = [];
   listaComunas: Regiones[] = [];
+  mensaje:string="";
 
   constructor(
     private fb:FormBuilder,
@@ -32,7 +33,7 @@ export class RegistroComponent implements OnInit {
       this.form = this.fb.group({
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
-      rut: ['', [Validators.required]],
+      rut: ['', [Validators.required,Validators.pattern("[0-9]{1,10}\-[K|k|0-9]")]],
       direccion: ['', [Validators.required]],
       region: ['', [Validators.required]],
       comuna: ['', [Validators.required]],
@@ -68,11 +69,28 @@ export class RegistroComponent implements OnInit {
         idUsuario: 0, //Esto no se como definirlo porque se supone q va cambiando provisoriamente asi
       };
 
-      this.paciente_service.addPaciente(paciente).subscribe(añadido=>{ //"Añadido" es el paciente que fue añadido a la BD
-        console.log(`${añadido} Fue añadadido`)
+      this.paciente_service.addPaciente(paciente).subscribe(anadido=>{ //"Añadido" es el paciente que fue añadido a la BD
+        
+        if(anadido != 'usuario creado'){
+          if(anadido == 'rut ocupado'){
+            Swal.fire({
+              title: "Error al crea usuario",
+              text:"Rut ya existente",
+              icon:"error"
+            })
+          }else{
+            Swal.fire({
+              title: "Error al crea usuario",
+              text:"Email ya existente",
+              icon:"error"
+            })
+          }
+        }else{
+          console.log(`${anadido} Fue añadadido`);
+          this.router.navigate(['']);
+        }        
       });
-      // this.form.reset();
-      this.router.navigate([``]) //definir que se va a vista paciente
+      
 
     }
   }
@@ -86,8 +104,6 @@ export class RegistroComponent implements OnInit {
   getComuna(){
     this.LugaresService.getComuna(this.form.controls.region.value).subscribe(res =>{
       this.listaComunas = res;
-    },error =>{
-      
     })
   }
 }
