@@ -15,6 +15,7 @@ import { FormCitaAdminComponent } from './components/form-cita-admin/form-cita-a
 
 import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/reporte-usuarios.component';
 import { EditarHistoriaComponent } from './components/paciente/historia-clinica/editar-historia/editar-historia.component';
+import { CanActivateService } from './servicios/can-activate.service';
 
 
 
@@ -22,13 +23,13 @@ import { EditarHistoriaComponent } from './components/paciente/historia-clinica/
 const routes: Routes = [
   {path:'home',component: HomeComponent},
   {path:'admin',component:AdminComponent},
-  {path:'paciente/:id',component:PacienteComponent},
+  {path:'paciente/:id',component:PacienteComponent,canActivate: [CanActivateService]},
   {path: 'registro', component: RegistroComponent}, //espeificar donde va despues
-  {path:'paciente/:id/citas',component:CitasComponent},
+  {path:'paciente/:id/citas',component:CitasComponent, canActivate: [CanActivateService]},
   {path: 'admin/listar-citas-admin', component: ListarCitasAdminComponent},
   {path: 'admin/reporte', component: ReporteUsuariosComponent},
-  {path: 'paciente/:id/reserva', component:PedirCitaComponent},
-  {path:'paciente/:id/historia',component:HistoriaClinicaComponent,data: { viewOption: 'paciente' }},
+  {path: 'paciente/:id/reserva', component:PedirCitaComponent,canActivate: [CanActivateService]},
+  {path:'paciente/:id/historia',component:HistoriaClinicaComponent,canActivate: [CanActivateService],data: { viewOption: 'paciente' }},
   {path:'admin/:id/historia',component:HistoriaClinicaComponent,data: { viewOption: 'admin' }},
   {path: 'admin/formCitaAdmi/:id', component: FormCitaAdminComponent},
   {path: 'admin/:id/historia/editar', component: EditarHistoriaComponent},

@@ -19,6 +19,13 @@ private currentSession:Session=null;
     this.currentSession=session;
     this.localStorageService.setItem('datos', JSON.stringify(session));
   }
+  isLogged(){
+    if (this.currentSession==null){
+      return false
+    }else{
+      return true
+    }
+  }
 
   CargarDatos():Session{
     let datos=this.localStorageService.getItem("datos");
