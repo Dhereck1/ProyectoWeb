@@ -25,6 +25,7 @@ import { ReporteUsuariosComponent } from './components/admin/reporte-usuarios/re
 import { EditarHistoriaComponent } from './components/paciente/historia-clinica/editar-historia/editar-historia.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CanActivateService } from './servicios/can-activate.service';
 
 
 
@@ -56,7 +57,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SweetAlert2Module,
     NgbModule
   ],
-  providers: [],
+  providers: [CanActivateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
