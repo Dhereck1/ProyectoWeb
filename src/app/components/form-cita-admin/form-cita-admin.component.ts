@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConexionService } from '../../servicios/conexion.service';
 import { cita, medico, paciente } from '../../interfaces/interfaces';
 import { PacienteService } from 'src/app/servicios/paciente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-cita-admin',
@@ -79,7 +80,11 @@ export class FormCitaAdminComponent implements OnInit {
       this.citaActual[0].idMedico=this.form.get("medico")?.value
       console.log(this.citaActual[0])
       this.service.actualizarCita(this.citaActual[0]).subscribe(respuesta=>{
-        console.log(respuesta) //sweet alert aqui 
+        console.log(respuesta) 
+        Swal.fire({
+          title: "Actualización de hora realizada",
+          icon:"success"
+        })
       })
       this.router.navigate(['admin/listar-citas-admin']);
     }

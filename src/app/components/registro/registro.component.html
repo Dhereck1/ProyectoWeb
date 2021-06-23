@@ -19,10 +19,13 @@
     <p>
         <mat-form-field appearance="legacy">
         <mat-label>Rut</mat-label>
-        <input matInput placeholder="x.xxx.xxx-x" formControlName="rut" type="text"class="input">
+        <input matInput placeholder="xxxxxxx-x" formControlName="rut" type="text"class="input">
         <mat-icon matSuffix>recent_actors</mat-icon>
         </mat-form-field>
     </p>
+    <div *ngIf="form.get('rut').hasError('pattern')" class="alert alert-danger" role="alert">
+        Formato RUT no es correcto
+    </div>
 
     <p>
         <mat-form-field appearance="legacy">
@@ -54,6 +57,10 @@
         <mat-icon matSuffix>mail_outline</mat-icon>
         </mat-form-field>
     </p>
+
+    <div *ngIf="form.get('correo').hasError('email')" class="alert alert-danger" role="alert">
+        Formato de Correo electrónico no es correcto
+    </div>
     <p>
         <mat-form-field appearance="legacy">
         <mat-label>Contraseña</mat-label>

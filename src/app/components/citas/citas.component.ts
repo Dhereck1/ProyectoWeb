@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { cita, medico } from 'src/app/interfaces/interfaces';
 import { ConexionService } from 'src/app/servicios/conexion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-citas',
@@ -56,6 +57,10 @@ export class CitasComponent implements OnInit {
       //editar
     this.servicio.cancelarCita(Cita).subscribe(respuesta=>{
       console.log(`${respuesta}`)
+      Swal.fire({
+        title: "Reserva cancelada",
+        icon:"success"
+      })
     })
       this.router.navigate(["/paciente",this.id])
     }
