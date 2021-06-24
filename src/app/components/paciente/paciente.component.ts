@@ -16,7 +16,6 @@ export class PacienteComponent implements OnInit {
 
   ngOnInit(): void {
     this.id=this.route.snapshot.paramMap.get('id') as string;
-    this.auth.setRuta(this.id)
 
     if(!this.storage.getCurrentUser()){
       window.location.href="/home";

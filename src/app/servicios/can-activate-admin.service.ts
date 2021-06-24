@@ -4,24 +4,22 @@ import { CanActivate } from '@angular/router';
 import { StorageService } from './storage.service';
 
 @Injectable()
-export class CanActivateService implements CanActivate {
+export class CanActivateAdminService implements CanActivate {
 
   constructor(private auth:StorageService, private router:Router ) { }
 
   id=this.auth.getCurrentUser();
-  idruta=""
-  //idruta=this.route.snapshot.paramMap.get('id') as string;
-  canActivate(route: ActivatedRouteSnapshot){
+  canActivate(){
     if (!this.auth.isLogged()){
       console.log("No estas logeado");
       this.router.navigate([""])
       return false
     }
-    if(this.id!=route.params.id){
-      console.log("Estas logeado en otra cuenta!")
+    if (Number(this.id)!=1){
+      console.log("No eres admin");
       this.router.navigate([""])
+      return false
     }
-    //console.log(route.params.id)
     return true
   }
 }
