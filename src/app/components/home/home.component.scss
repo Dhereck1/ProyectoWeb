@@ -6,7 +6,8 @@ mat-card-title{
 }
 
 mat-card {
-    max-width: 300px;
+    min-width: 350px;
+    max-width: 350px;
     margin: 2em auto;
     margin-top:5%;
     text-align: center;
@@ -42,6 +43,10 @@ mat-card {
 
 :host ::ng-deep .mat-form-field-invalid .mat-input-element {
   color:rgb(117, 3, 3) !important;
+}
+
+button{
+  margin-top: 25px;
 }
 
 button:hover{
