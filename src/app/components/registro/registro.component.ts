@@ -21,6 +21,7 @@ export class RegistroComponent implements OnInit {
   listaRegiones: Regiones[] = [];
   listaComunas: Regiones[] = [];
   mensaje:string="";
+  token:string;
 
   constructor(
     private fb:FormBuilder,
@@ -28,6 +29,7 @@ export class RegistroComponent implements OnInit {
     private paciente_service: PacienteService,
     private router: Router
   ) { }
+  siteKey:string="6LfljU4bAAAAAHvsisIxBLpeCD6b5IkP_MZ0bDII";
 
   ngOnInit(): void {
       this.form = this.fb.group({
@@ -38,7 +40,8 @@ export class RegistroComponent implements OnInit {
       region: ['', [Validators.required]],
       comuna: ['', [Validators.required]],
       correo: ['', [Validators.required, Validators.email]],
-      contrasena: ['', [Validators.required]]
+      contrasena: ['', [Validators.required]],
+      recaptcha: ['', Validators.required]
     });
 
     this.getRegion();
@@ -69,28 +72,30 @@ export class RegistroComponent implements OnInit {
         idUsuario: 0, //Esto no se como definirlo porque se supone q va cambiando provisoriamente asi
       };
 
-      this.paciente_service.addPaciente(paciente).subscribe(anadido=>{ //"Añadido" es el paciente que fue añadido a la BD
-        
-        if(anadido != 'usuario creado'){
-          if(anadido == 'rut ocupado'){
-            Swal.fire({
-              title: "Error al crea usuario",
-              text:"Rut ya existente",
-              icon:"error"
-            })
+      this.paciente_service.Token().subscribe(token=>{
+        this.token=token;
+        this.paciente_service.addPaciente(paciente, this.token).subscribe(anadido=>{ //"Añadido" es el paciente que fue añadido a la BD
+          
+          if(anadido != 'usuario creado'){
+            if(anadido == 'rut ocupado'){
+              Swal.fire({
+                title: "Error al crea usuario",
+                text:"Rut ya existente",
+                icon:"error"
+              })
+            }else{
+              Swal.fire({
+                title: "Error al crea usuario",
+                text:"Email ya existente",
+                icon:"error"
+              })
+            }
           }else{
-            Swal.fire({
-              title: "Error al crea usuario",
-              text:"Email ya existente",
-              icon:"error"
-            })
-          }
-        }else{
-          console.log(`${anadido} Fue añadadido`);
-          this.router.navigate(['']);
-        }        
-      });
-      
+            console.log(`${anadido} Fue añadadido`);
+            this.router.navigate(['']);
+          }        
+        });
+      }); 
 
     }
   }

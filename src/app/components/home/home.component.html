@@ -22,6 +22,10 @@
         <input matInput type="password" formControlName="password">
         <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
+      <ngx-recaptcha2 #captchaElem
+        [siteKey]="siteKey"
+        formControlName="recaptcha">
+      </ngx-recaptcha2>
       <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Iniciar Sesión</button>
     </form>
   </mat-card-content>
