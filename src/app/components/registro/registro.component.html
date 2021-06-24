@@ -69,6 +69,13 @@
         </mat-form-field>
     </p>
 
+    <p>
+        <ngx-recaptcha2 #captchaElem
+        [siteKey]="siteKey"
+        formControlName="recaptcha">
+        </ngx-recaptcha2>
+    </p>
+
     <p class="button-container field">
         <button type="submit" mat-raised-button class="button" [disabled]="!form.valid">Confirmar</button>
     </form>

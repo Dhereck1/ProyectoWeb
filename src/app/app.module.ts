@@ -27,6 +27,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CanActivateService } from './servicios/can-activate.service';
 import { CanActivateAdminService } from './servicios/can-activate-admin.service';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 
@@ -56,7 +57,8 @@ import { CanActivateAdminService } from './servicios/can-activate-admin.service'
     ReactiveFormsModule,
     MaterialModule,
     SweetAlert2Module,
-    NgbModule
+    NgbModule,
+    NgxCaptchaModule
   ],
   providers: [CanActivateService,CanActivateAdminService],
   bootstrap: [AppComponent]

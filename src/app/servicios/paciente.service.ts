@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { paciente } from '../interfaces/interfaces';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -13,8 +13,11 @@ export class PacienteService {
   constructor(private servicio:HttpClient) { }
 
 
-  addPaciente(cliente:paciente):Observable<any>{
-    return this.servicio.post(`${this.servidor}/api/paciente/registro`,cliente)
+  addPaciente(cliente:paciente, token:string):Observable<any>{
+    let headers= new HttpHeaders();
+    headers= headers.append('Content-Type','application/json');
+    headers= headers.append('access-token', token)
+    return this.servicio.post(`${this.servidor}/api/paciente/registro`,cliente , {'headers': headers})
   }
   actHistoria(cliente:paciente):Observable<any>{
     return this.servicio.put(`${this.servidor}/api/paciente/actHist`,cliente)
@@ -32,5 +35,8 @@ export class PacienteService {
     return this.servicio.get(`${this.servidor}/api/paciente/all`);
   }
 
+  Token():Observable<any>{
+    return this.servicio.get('http://localhost:3500/api/paciente/token');
+  }
 
 }

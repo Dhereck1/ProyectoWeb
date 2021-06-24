@@ -22,9 +22,12 @@ export class HomeComponent implements OnInit {
   constructor(private form:FormBuilder, private servicio:LoginService, private router: Router, private storage:StorageService) { 
     this.formulario=this.form.group({
       rut:['', [Validators.required,Validators.pattern("[0-9]{1,10}\-[K|k|0-9]")]],
-      password:['', Validators.required]
+      password:['', Validators.required],
+      recaptcha: ['', Validators.required]
     });
   }
+
+  siteKey:string="6LfljU4bAAAAAHvsisIxBLpeCD6b5IkP_MZ0bDII";
 
   ngOnInit(): void {
 
