@@ -44,7 +44,11 @@ export class HomeComponent implements OnInit {
 
     if(this.storage.getCurrentUser()){
       let id = this.storage.getCurrentUser();
-      window.location.href=`/paciente/${id}`;
+      if(Number(id)==1){
+      window.location.href=`/admin`;
+      }else{
+        window.location.href=`/paciente/${id}`;
+      }
     }
   }
 
